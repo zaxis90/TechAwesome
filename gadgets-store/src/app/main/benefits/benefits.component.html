@@ -1,0 +1,10 @@
+<div class="benefits">
+  <h2 class="benefits__title">Awesome <span>преимущества</span></h2>
+  <div class="benefits__box">
+    <div *ngFor="let item of benefitsImg">
+      <img [src]="item.imgUrl" alt="">
+      <h3 class="benefits__box_title">{{item.title}}</h3>
+      <p class="benefits__box_text">{{item.text}}</p>
+    </div>
+  </div>
+</div>

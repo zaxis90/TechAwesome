@@ -1,0 +1,55 @@
+.container{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.returns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__holder{
+    display: flex;
+    text-align: center;
+    height: 85vh;
+    &_w{
+      background: #a735c0;
+    }
+    &_b{
+      background: #6600FF;
+    }
+  }
+  &__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &_p{
+      justify-content: center;
+      padding: 50px;
+    }
+    &_i{
+      justify-content: end;
+    }
+  }
+  &__title{
+    font-size: 4em;
+    font-weight: 600;
+    color: #a735c0;
+    line-height: 1.5;
+    &_w{
+      color: white;
+    }
+  }
+  &__list{
+    text-align: start;
+  }
+  &__item{
+    font-size: 2em;
+    color: white;
+    line-height: 1.5;
+    padding: 10px 0;
+  }
+  &__subtitle{
+    color: white;
+    font-size: 1em;
+  }
+}

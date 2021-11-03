@@ -1,0 +1,78 @@
+.mailing-holder{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background-image: url('https://kartinkin.com/uploads/posts/2020-07/1593812981_40-p-nezhnii-sirenevii-fon-51.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+  &__box{
+    padding: 70px 50px 70px 0;
+    width: 45%;
+  }
+  &__title{
+    font-size: 3em;
+    text-transform: uppercase;
+    color: #a735c0;
+    font-weight: 700;
+  }
+  &__text{
+    color: rgb(197, 159, 216);
+    font-size: 1.5em;
+    word-wrap: break-word;
+    line-height: 40px;
+    font-weight: 700;
+  }
+  &__form{
+    margin: 30px 0;
+    border: none;
+    display: inline-block;
+    border-radius: 40px;
+  }
+  &__input{
+    margin: 0;
+    border: none;
+    border-radius: 40px 0 0 40px;
+    outline: none;
+    font-size: 1.2em;
+    padding: 15px 20px;
+  }
+  &__btn{
+    margin: 0;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 0 40px 40px 0;
+    color: white;
+    background-color: #a735c0;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 600;
+    &:hover{
+      background-color: rgb(134, 78, 161);
+    }
+  }
+}
+@media screen and (max-width: 1072px){
+  .mailing-holder{
+    font-size: .6em;
+  }
+}
+@media screen and (max-width: 800px){
+  .mailing-holder{
+    margin: 0;
+  }
+}
+@media screen and (max-width: 700px){
+  .mailing-holder{
+    justify-content: center;
+    &__box{
+      padding: 0;
+    }
+    &__form{
+      width: 30vw;
+      display: flex;
+    }
+  }
+}

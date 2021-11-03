@@ -1,0 +1,46 @@
+<div class="slider-box" #container>
+  <div class="slider-holder" #sidebar>
+    <div style="background: linear-gradient(229.99deg, #ffffff -26%, #0081eb 145%);">
+      <h1>Компьютер Vinga Wolverine</h1>
+      <a (click)="actualFilter($event.target, 'Vinga')">смотреть актуальные предложения</a>
+    </div>
+    <div style="background: linear-gradient(215.32deg, #F90306 -1%, #9E0706 124%);">
+      <h1>Квадрокоптеры DJI Mavic Air Flame</h1>
+      <a (click)="actualFilter($event.target, 'dji')">смотреть актуальные предложения</a>
+    </div>
+    <div style="background: linear-gradient(221.87deg, #000000 1%, #5305AF 128%);">
+      <h1>Смарт-часы Samsung Galaxy Watch</h1>
+      <a (click)="actualFilter($event.target, 'Samsung Galaxy Watch')">смотреть актуальные предложения</a>
+    </div>
+    <div style="background: linear-gradient(220.16deg, #88703c -8%, #FFE101 138%);">
+      <h1>Самокаты Ninebot</h1>
+      <a (click)="actualFilter($event.target, 'электросамокат Ninebot')">смотреть актуальные предложения</a>
+    </div>
+    <div style="background: linear-gradient(229.99deg, #000 -26%, #585858 145%);">
+      <h1>Ноутбуки Xiaomi</h1>
+      <a (click)="actualFilter($event.target, 'Ноутбук Mi')">смотреть актуальные предложения</a>
+    </div>
+    <div style="background: linear-gradient(229.99deg, #000 -26%, #2f55d1 145%);">
+      <h1>iPhone</h1>
+      <a (click)="actualFilter($event.target, 'iPhone')">смотреть актуальные предложения</a>
+    </div>
+  </div>
+  <div class="main-slide" #mainSlide>
+    <div style="background-image: url('https://p7.itc.cn/images01/20210127/ec7cb5fe64aa4d778f92c84b3b1b909a.png');"></div>
+    <div style="background-image: url('https://xiaomi-store.kz/images/notebook-pro-x-15/1M.jpg');"></div>
+    <div style="background-image: url('https://sc04.alicdn.com/kf/Hd63cb7e2098b464dab1cb7106ba82e57Y/247850673/Hd63cb7e2098b464dab1cb7106ba82e57Y.jpg');"></div>
+    <div style="background-image: url('https://cdn.erosdigitalhome.ae/media/wysiwyg/SM-R850.jpg');"></div>
+    <div style="background-image: url('https://www.prokaptur.com/22519-thickbox_default/dji-mavic-air-flame-red-best-price-djimavicairredflame-drones-buy-dji-mavic-air-flame-red-.jpg');"></div>
+    <div style="background-image: url('https://sum.com.ua/image/catalog/products/6/SU0518146-0.jpg');"></div>
+  </div>
+  <div class="controls">
+    <button class="button-slide down-button" (click)="changeSlide('down'); StopAutoChange($event.target)">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">south</mat-icon>
+    </button>
+    <button class="button-slide up-button" (click)="changeSlide('up'); StopAutoChange($event.target)">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">north</mat-icon>
+    </button>
+  </div>
+</div>
+
+

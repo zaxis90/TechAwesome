@@ -1,0 +1,79 @@
+.container {
+  margin: 0;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://files.123freevectors.com/wp-content/original/131663-abstract-purple-and-white-low-poly-background-template-vector-graphic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.delivery-holder {
+  &__first-title {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  &__shell {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    justify-content: start;
+  }
+
+  &__box {
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px black;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  &__title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #a735c0;
+  }
+
+  &__text {
+    font-weight: 600;
+  }
+
+  &__item {
+    line-height: 1.5;
+  }
+}
+
+.payment-holder {
+
+  &__first-title {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  &__shell {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    justify-content: start;
+  }
+
+  &__title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #a735c0;
+  }
+
+  &__box {
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px black;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  &__text {
+    font-weight: 600;
+  }
+}

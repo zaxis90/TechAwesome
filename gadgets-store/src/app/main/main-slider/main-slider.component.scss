@@ -1,0 +1,108 @@
+.slider-box{
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.slider-holder {
+  height: 85vh;
+  position: relative;
+  width: 35%;
+  top: 0;
+  left: 0;
+  transition: transform 1s ease-in-out;
+  &__text{
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+  }
+}
+
+.slider-holder > div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.slider-holder h1 {
+  font-size: 2.5em;
+  text-align: center;
+  color: white;
+}
+.slider-holder a {
+  font-size: 1em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  transition: .5s;
+  cursor: pointer;
+  text-decoration: underline;
+  &:hover{
+    font-size: 1.3em;
+  }
+}
+
+.main-slide {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 65%;
+  transition: transform 1s ease-in-out;
+}
+
+.main-slide > div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+}
+
+.button-slide {
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button-slide:focus {
+  outline: none;
+}
+
+.slider-box .controls .button-slide {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  z-index: 100;
+}
+
+.slider-box .controls .down-button {
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid #aaa;
+  &:hover{
+    color: black;
+  }
+}
+
+.slider-box .controls .up-button {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #aaa;
+  &:hover{
+    color: black;
+  }
+}
+.controls__img{
+  height: 30px;
+  width: 25px;
+  vertical-align: -10px;
+}
+
+

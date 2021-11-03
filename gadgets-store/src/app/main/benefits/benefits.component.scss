@@ -1,0 +1,60 @@
+.benefits{
+  width: 100%;
+  text-align: center;
+  padding: 100px 0 150px 0;
+  background-image: url("https://image.freepik.com/free-vector/white-abstract-background-theme_23-2148830884.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__title{
+    text-transform: uppercase;
+    font-size: 4em;
+    color: #6600FF;
+    font-style: italic;
+    font-weight: 800;
+    & span{
+      text-transform: lowercase;
+      color: #a735c0;
+    }
+  }
+  &__box{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 40px 0;
+    & img{
+      width: 13vw;
+      height: 15vh;
+      object-fit: scale-down;
+    }
+    &_title{
+      padding: 10px 0;
+      font-size: 1.7em;
+      font-weight: 800;
+      color: #6600FF;
+    }
+    &_text{
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #a735c0;
+    }
+  }
+}
+@media screen and (max-width: 1580px){
+  .benefits{
+    font-size: .8em;
+    padding: 50px 0 75px 0;
+  }
+}
+@media screen and (max-width: 1072px){
+  .benefits{
+    font-size: .7em;
+    padding: 25px 0 35px 0;
+  }
+}
+@media screen and (max-width: 800px){
+  .benefits{
+    &__box{
+      flex-direction: column;
+    }
+  }
+}

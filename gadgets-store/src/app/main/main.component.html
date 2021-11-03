@@ -1,0 +1,106 @@
+<mat-toolbar class="header">
+  <div class="nav">
+    <a class="header__link" routerLink="/home/main"><img src="./assets/logo.png" alt=""></a>
+    <button class="burger" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <a class="header__link" routerLink="about">О нас</a>
+      </button>
+      <button mat-menu-item>
+        <a class="header__link" (click)="moveToBlog($event.target)">Блог</a>
+      </button>
+      <button mat-menu-item>
+        <a class="header__link" routerLink="delivery">Доставка и Оплата</a>
+      </button>
+      <button mat-menu-item>
+        <a class="header__link" routerLink="contacts">Контакты</a>
+      </button>
+    </mat-menu>
+  </div>
+  <div class="nav-links">
+    <a class="header__link" routerLink="about">О нас</a>
+    <a class="header__link" (click)="moveToBlog($event.target)">Блог</a>
+    <a class="header__link" routerLink="delivery">Доставка и Оплата</a>
+    <a class="header__link" routerLink="contacts">Контакты</a>
+  </div>
+  <form class="example-form">
+    <input type="text" placeholder="Поиск" class="mat-elevation-z2" [(ngModel)]="searchTerm" (change)="search()"
+           [matAutocomplete]="auto" [formControl]="searchControl">
+    <button title="Искать" mat-raised-button color="primary" (click)="search()"><span
+      class="material-icons">search</span></button>
+    <mat-autocomplete #auto="matAutocomplete" class="mat-elevation-z2">
+      <mat-option *ngFor="let item of filteredResults$ | async" [value]="item">
+        <span>{{item}}</span>
+      </mat-option>
+    </mat-autocomplete>
+    <div class="manage-btns-box">
+      <span title="Личный кабинет" class="material-icons" routerLink="profile">manage_accounts</span>
+      <div class="favorite"><span title="Избранное" class="material-icons" (click)="favoriteFilter($event.target)">favorite</span>
+        <div class="favorite__item"
+             *ngIf="!!this._product.favoriteGoods.length">{{this._product.favoriteGoods.length}}</div>
+      </div>
+      <div class="basket"><span title="Корзина товаров" class="material-icons" (click)="basketFilter($event.target)">shopping_cart</span>
+        <div class="basket__item"
+             *ngIf="!!this._product.basketGoods.length">{{this._product.basketGoods.length}}</div>
+      </div>
+    </div>
+  </form>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <div *ngFor="let category of categories">
+      <a class="category_{{categories.indexOf(category)}}" (click)="categoriesFilter($event.target)">{{category}}</a>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+<app-benefits></app-benefits>
+<app-blog></app-blog>
+<app-mailing></app-mailing>
+<div class="footer">
+  <div class="container">
+    <div class="info-holder">
+      <div class="info-holder__box">
+        <a class="info-holder__logo" routerLink="/home/main" (click)="moveTop($event.target)">
+          <img class="info-holder__img" src="assets/logo.png" alt="">
+        </a>
+      </div>
+      <div class="info-holder__box">
+        <h2 class="info-holder__title">Магазин</h2>
+        <a class="info-holder__link" routerLink="about" (click)="moveTop($event.target)">О компании</a>
+        <a class="info-holder__link" routerLink="contacts" (click)="moveTop($event.target)">Контакты</a>
+      </div>
+      <div class="info-holder__box">
+        <h2 class="info-holder__title">Покупателю</h2>
+        <a class="info-holder__link" routerLink="delivery" (click)="moveTop($event.target)">Доставка и оплата</a>
+        <a class="info-holder__link" routerLink="returns" (click)="moveTop($event.target)">Обмен и возврат товара</a>
+        <a class="info-holder__link" routerLink="packaging" (click)="moveTop($event.target)">Хранение упаковки</a>
+      </div>
+      <div class="info-holder__box">
+        <h2 class="info-holder__title">График работы</h2>
+        <p class="info-holder__text">Круглосуточно</p>
+        <h2 class="info-holder__title">Адресс</h2>
+        <p class="info-holder__text">г. Днепр, пер. Фестивальный, 5</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2642.178447283123!2d35.019500815794856!3d48.52981183173939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d958b5aae5fa1f%3A0xc76e7243cf4cde96!2z0KTQtdGB0YLQuNCy0LDQu9GM0L3Ri9C5INC_0LXRgC4sIDUsINCU0L3QuNC_0YDQviwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1631371746581!5m2!1sru!2sua"
+          width="300" height="200" style="border:5px solid #a735c0;" allowfullscreen=""
+          loading="lazy"></iframe>
+      </div>
+    </div>
+    <p class="other-info">© TechAwesome, 2021 Интернет-магазин</p>
+  </div>
+</div>
+<div class="example-button-container">
+  <button class="button-up" mat-fab color="primary" aria-label="Example icon button with a delete icon"
+          (click)="moveTop($event.target)">
+    <mat-icon>north</mat-icon>
+  </button>
+</div>
+
+

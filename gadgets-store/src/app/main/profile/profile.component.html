@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="profile">
+    <div class="profile__heading">
+      <mat-icon class="material-icons-outlined">badge</mat-icon>
+      <h3 class="profile__title">Основное</h3>
+    </div>
+    <hr>
+    <div class="user-info">
+      <p class="user-info__text">Фамилия: <span>{{surname}}</span></p>
+      <p class="user-info__text">Имя: <span>{{name}}</span></p>
+      <p class="user-info__text">Отчество: <span>{{patronymic}}</span></p>
+      <p class="user-info__text">Никнейм: <span>{{_info.currentUser?.name}}</span></p>
+      <p class="user-info__text">Дата рождения: <span>{{dateOfBirth}}</span></p>
+    </div>
+    <div class="profile__heading">
+      <mat-icon class="material-icons-outlined">contact_phone</mat-icon>
+      <h3 class="profile__title">Контакты</h3>
+    </div>
+    <hr>
+    <div class="user-info">
+      <p class="user-info__text">Мобильный: <span>{{mobile}}</span></p>
+      <p class="user-info__text">E-mail: <span>{{_info.currentUser?.email}}</span></p>
+    </div>
+    <div class="profile__heading">
+      <mat-icon class="material-icons-outlined">vpn_key</mat-icon>
+      <h3 class="profile__title">Информация о пароле пользователя</h3>
+    </div>
+    <hr>
+    <div class="user-info">
+      <p class="user-info__text">Ваш пароль: <span>{{_info.currentUser?.password}}</span></p>
+    </div>
+  </div>
+  <form class="profile__form">
+    <button mat-raised-button color="primary" (click)="openDialog()">Редактировать профиль</button>
+  </form>
+</div>
+

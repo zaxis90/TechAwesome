@@ -1,0 +1,9 @@
+<div class="blog-holder">
+  <h2 id="blog" class="blog-holder__title">awesome<span class="sale-holder__awesome"> блог</span></h2>
+  <div class="blog-holder__box">
+    <div #blog class="blog-holder__card" *ngFor="let item of blogInfo" [ngStyle]="{'background-image': 'url('+ item.imgUrl +')' }" (click)="slidesPlugin($event.target)">
+      <h3>{{item.title}}</h3>
+      <a class="blog-holder__link" [routerLink]="item.path" (click)="moveUp($event.target)">{{item.desc}}</a>
+    </div>
+  </div>
+</div>

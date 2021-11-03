@@ -1,0 +1,78 @@
+<div class="container" *ngIf="currentGood">
+  <mat-dialog-content>
+    <div class="dialog-info">
+      <div class="dialog-info__shell">
+        <mat-dialog-content>
+          <div class="img-magnifier-container">
+            <img class="dialog-info__img"
+                 [src]="currentGood.baseImg"
+                 alt="">
+          </div>
+          <p class="dialog-info__other-title">Характеристики:</p>
+          <p class="dialog-info__other-text">{{currentGood.characteristics}}</p>
+          <p class="dialog-info__other-title">Описание:</p>
+          <p class="dialog-info__other-text">{{currentGood.desc}}</p>
+        </mat-dialog-content>
+      </div>
+      <div class="dialog-info__box">
+        <h2 class="dialog-info__title" mat-dialog-title>{{currentGood.name}}</h2>
+        <p class="dialog-info__rating">{{currentGood.rating}}</p>
+        <p class="dialog-info__availability">Есть в наличии</p>
+        <div class="dialog-info__holder">
+          <p class="dialog-info__price">{{currentGood.price}} грн.</p>
+          <div>
+            <span title="Избранное" class="material-icons" (click)="addFavorites(currentGood)">favorite</span>
+            <span class="dialog-info__favorite">Добавить в избранное</span>
+          </div>
+        </div>
+        <mat-dialog-actions align="end">
+          <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial (click)="moveToBasket(currentGood)">
+            Купить
+          </button>
+        </mat-dialog-actions>
+        <p class="dialog-info__other-title">Доставка:</p>
+        <div class="dialog-info__delivery">
+          <div class="dialog-info__delivery_box">
+            <p class="dialog-info__delivery_title">Из магазина TechAwesome</p>
+            <p class="dialog-info__delivery_time">через 20 мин</p>
+            <p class="dialog-info__delivery_price">БЕСПЛАТНО</p>
+          </div>
+          <div class="dialog-info__delivery_box">
+            <p class="dialog-info__delivery_title">Из отделения "Нова Пошта"</p>
+            <p class="dialog-info__delivery_time">Завтра</p>
+            <p class="dialog-info__delivery_price">БЕСПЛАТНО</p>
+          </div>
+          <div class="dialog-info__delivery_box">
+            <p class="dialog-info__delivery_title">Из отделения Justin</p>
+            <p class="dialog-info__delivery_time">Завтра</p>
+            <p class="dialog-info__delivery_price">БЕСПЛАТНО</p>
+          </div>
+          <div class="dialog-info__delivery_box">
+            <p class="dialog-info__delivery_title">Доставка по адресу</p>
+            <p class="dialog-info__delivery_time">Завтра</p>
+            <p class="dialog-info__delivery_price">БЕСПЛАТНО</p>
+          </div>
+        </div>
+        <p class="dialog-info__other-title">Оплата:</p>
+        <p class="dialog-info__pay-text">Наличными, по безналичному рассчету для юр. лиц с НДС, терминалами
+          ПриватБанка,
+          с помощью платежных систем Visa/Mastercard, Privat24, Liqpay, Portmone и другими.</p>
+        <div class="dialog-info__pay-box">
+          <img class="dialog-info__pay-img"
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
+               alt="">
+          <img class="dialog-info__pay-img"
+               src="https://brand.mastercard.com/content/dam/mccom/brandcenter/thumbnails/mastercard_vrt_rev_92px_2x.png"
+               alt="">
+          <img class="dialog-info__pay-img"
+               src="https://s3.eu-central-1.amazonaws.com/letspay/currencies/95901256b0f5f52ae730330f8d96a76a.svg"
+               alt="">
+          <img class="dialog-info__pay-img" src="https://nv.ua/uploads/wysiwyg/7447Logo-01%20(1).png" alt="">
+        </div>
+      </div>
+    </div>
+    <mat-dialog-actions class="close" align="end">
+      <span mat-dialog-close>🗙</span>
+    </mat-dialog-actions>
+  </mat-dialog-content>
+</div>

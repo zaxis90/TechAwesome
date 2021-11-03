@@ -1,0 +1,24 @@
+<div class="container" *ngIf="currentGoods">
+  <mat-card [id]="item.id" class="example-card" *ngFor="let item of currentGoods" (click)="openDialog(item.id)">
+    <img class="example-card__img" [src]="item.baseImg" alt="" (mouseover)="changeImg($event.target, item.secondImg)"
+         (mouseleave)="changeImg($event.target, item.baseImg)">
+    <mat-card-content>
+      <h2 class="example-card__title">{{item.name}}</h2>
+      <div class="example-card__box">
+        <p class="example-card__text">Страна производителя: <span class="example-card__value">{{item.corpContry}}</span>
+        </p>
+        <p class="example-card__text">Производитель: <span class="example-card__value">{{item.corp}}</span></p>
+        <p class="example-card__text">Гарантия: <span class="example-card__value">{{item.guarantee}} мес.</span></p>
+        <p class="example-card__text">Рейтинг товара: <span class="example-card__value rating">{{item.rating}}</span>
+        </p>
+        <p class="example-card__text price">Цена: <span class="example-card__value">{{item.price}} грн.</span></p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="example-card__controls">
+      <button mat-raised-button color="primary" (click)="$event.stopPropagation(); addBaskets(item)" *ngIf="!item.isBasket">Добавить в корзину</button>
+      <button mat-raised-button color="primary" (click)="$event.stopPropagation(); removeFromBasket(item)" *ngIf="item.isBasket">Убрать из корзины</button>
+      <button mat-raised-button color="primary" (click)="$event.stopPropagation(); addFavorites(item)" *ngIf="!item.isFavorite">Добавить в избранное</button>
+      <button mat-raised-button color="primary" (click)="$event.stopPropagation(); removeFromFavorites(item)" *ngIf="item.isFavorite">Убрать из избранного</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

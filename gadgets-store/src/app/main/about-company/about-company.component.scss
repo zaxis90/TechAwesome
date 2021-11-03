@@ -1,0 +1,93 @@
+.container{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.about-company-start{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  background-image: url("https://files.123freevectors.com/wp-content/original/131666-purple-and-white-polygon-background-design-graphic.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &__subtitle{
+    font-size: 1.8em;
+    font-weight: 600;
+    padding-bottom: 30px;
+  }
+  &__title{
+    font-size: 6em;
+    font-weight: 600;
+    color: #a735c0;
+  }
+}
+.about-company-home{
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 50px 0;
+  background: azure;
+  &__title{
+    font-size: 3em;
+    font-weight: 600;
+    color: #a735c0;
+  }
+  &__text{
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  &__img{
+    width: 50%;
+    object-fit: scale-down;
+    align-self: center;
+  }
+}
+.about-company-sleep{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70vh;
+  width: 100%;
+  padding: 50px 50px;
+  background-image: url("https://techiesmagazine.com/wp-content/uploads/2021/02/Will-Starman-Ever-Return-to-Earth-scaled.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &__title{
+    font-size: 3em;
+    font-weight: 600;
+    color: white;
+  }
+  &__list{
+    color: white;
+    list-style: none;
+    max-width: 250px;
+  }
+  &__item{
+    font-size: 1.5em;
+    line-height: 1.5;
+    position: relative;
+    padding: 10px 0;
+    font-weight: 600;
+    &:before{
+      content: "★";
+      position: absolute;
+      left: -30px;
+      color: gold;
+    }
+  }
+  &__text{
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+}

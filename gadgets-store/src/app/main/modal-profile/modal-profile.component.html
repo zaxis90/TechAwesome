@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Добрый день {{_info.currentUser?.name}}</h1>
+<div mat-dialog-content>
+  <p>Введите свое имя</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Введите имя</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <p>Введите свою фамилию</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Введите фамилию</mat-label>
+    <input matInput [(ngModel)]="data.surname">
+  </mat-form-field>
+  <p>Введите свое отчество</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Введите отчество</mat-label>
+    <input matInput [(ngModel)]="data.patronymic">
+  </mat-form-field>
+  <p>Введите дату своего рождения</p>
+  <mat-form-field appearance="fill">
+    <mat-label>В формате дд/мм/гг</mat-label>
+    <input matInput [(ngModel)]="data.dateOfBirth">
+  </mat-form-field>
+  <p>Введите номер мобильного телефона</p>
+  <mat-form-field appearance="fill">
+    <mat-label>В формате +38(ХХХ)-ХХ-ХХ</mat-label>
+    <input matInput [(ngModel)]="data.mobile">
+  </mat-form-field>
+</div>
+<div class="controls" mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onNoClick()">Отмена</button>
+  <button mat-raised-button color="primary"
+          [mat-dialog-close]="[data.name, data.surname, data.patronymic, data.dateOfBirth, data.mobile]">
+    Потвердить изменения
+  </button>
+</div>

@@ -1,0 +1,96 @@
+.blog-holder{
+  position: relative;
+  top: -58px;
+  width: 100%;
+  text-align: center;
+  &__title{
+    text-transform: uppercase;
+    font-size: 4em;
+    color: #6600FF;
+    font-style: italic;
+    font-weight: 800;
+    & span{
+      text-transform: lowercase;
+      color: #a735c0;
+    }
+  }
+  &__box{
+    width: 100%;
+    display: flex;
+  }
+  &__card{
+    height: 80vh;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 500ms ease-in-out;
+    position: relative;
+    &:hover{
+      opacity: 0.8;
+    }
+    & h3{
+      position: absolute;
+      font-size: 1px;
+      border-radius: 20px;
+      font-weight: 500;
+      padding: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      opacity: 0;
+      color: white;
+    }
+  }
+  &__link{
+    text-decoration: none;
+    position: absolute;
+    font-size: 1px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    color: white;
+    padding: 0;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+}
+.active-blog{
+  flex: 10;
+  & h3{
+    opacity: 1;
+    transition: opacity .3s ease-in .4s;
+    background: #a735c0;
+    padding: 30px 0;
+    font-size: 1.8em;
+  }
+  & a{
+    opacity: 1;
+    transition: opacity .3s ease-in .4s;
+    background: #a735c0;
+    padding: 30px 0;
+    font-size: 1.8em;
+    &:hover{
+      transition: .7s;
+      background: #6600FF;
+    }
+  }
+}
+@media screen and (max-width: 1580px){
+  .blog-holder{
+    font-size: .8em;
+  }
+}
+@media screen and (max-width: 1072px){
+  .blog-holder{
+    font-size: .6em;
+  }
+}
+

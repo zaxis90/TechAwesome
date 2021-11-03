@@ -1,0 +1,54 @@
+.container{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.profile{
+  height: 100%;
+  width: 100%;
+  &__heading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  &__title{
+    font-size: 2em;
+    font-weight: 600;
+    color: #6600FF;
+    margin-left: 40px;
+    position: relative;
+    top: 15px;
+  }
+  &__form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    & button{
+      margin: 20px;
+    }
+  }
+}
+.user-info{
+  padding: 20px;
+  &__text{
+    font-size: 1.5em;
+    color: #6600FF;
+    font-weight: 500;
+    padding: 5px 0;
+  }
+}
+.mat-icon{
+  font-size: 4em;
+  color: #a735c0;
+}
+hr{
+  background: #a735c0;
+  width: 100%;
+  border: none;
+  padding: 2px 0;
+}
+span{
+  color: #a735c0;
+}
+
